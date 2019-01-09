@@ -41,7 +41,6 @@ namespace PingPong.DBLib
         {
             get
             {
-
                 if (static_Constructor == null)
                 {
                     Type[] oSignature = { typeof(DbDataReader) };
@@ -53,7 +52,6 @@ namespace PingPong.DBLib
         #endregion
 
         #region "Public Methods"
-
         /// <summary>
         /// Create a new instance initialized with default values.
         /// </summary>

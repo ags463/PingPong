@@ -9,7 +9,9 @@ AS BEGIN
 
 	SELECT * 
 	FROM Players
-	ORDER BY LastName, FirstName;
+	ORDER BY 
+		LastName,
+		FirstName;
 
 	RETURN 0;
 END;

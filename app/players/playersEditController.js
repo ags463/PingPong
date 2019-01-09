@@ -47,6 +47,15 @@ function (
         $scope.bodyCursor = "";
     }
 
+    function doFocus() {
+        $timeout(function () {
+            var element = $window.document.getElementById("FirstName");
+            console.log(element);
+            if (element)
+                element.focus();
+        });
+    }
+
     // Set up and start our timer
     $scope.currentDate = new Date();
     $scope.tickInterval = 1000 //ms
@@ -69,9 +78,13 @@ function (
                 $scope.player.Age = "";
             }
             endWait();
+            doFocus();
         });
     } else {
         $scope.formTitle = "Add Player";
         $scope.player = $scope.emptyPlayer;
+        doFocus();
     }
+
+    // Set our focus
 }]);;

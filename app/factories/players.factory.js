@@ -35,7 +35,7 @@
         return $http({
             method: 'GET',
             url: serviceRoot + 'Remove',
-            params: { 'playerID': playerID }
+            params: { 'PlayerID': playerID }
         });
     }
 }]);

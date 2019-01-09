@@ -9,7 +9,7 @@ function (
     // Our player list
     $scope.players = [];
 
-    // Command Functions /////
+    // Command Functions
     $scope.delete = function (player) {
         modals.open(
             "confirm",
@@ -23,11 +23,12 @@ function (
                 // This is the function that is called when the modal is confirmed
                 playersFactory.remove(player.PlayerID)
                 .then(function () {
-                    $scope.doRefresh();
-                }).else(function () {
-                });
-            }
-        );
+                    doRefresh();
+                })
+        })
+        .catch(function () {
+            // Do nothing
+        });
     };
 
     $scope.edit = function (player) {
@@ -46,9 +47,18 @@ function (
         $scope.bodyCursor = "wait-cursor";
     }
 
-    function endWait () {
+    function endWait() {
         $scope.loading = false;
         $scope.bodyCursor = "";
+    }
+
+    function doRefresh() {
+        startWait();
+        playersFactory.list()
+        .then(function (result) {
+            $scope.players = result.data;
+            endWait();
+        });
     }
 
     // Set up and start our timer
@@ -63,10 +73,5 @@ function (
     $timeout(tick, $scope.tickInterval);
 
     // Load our data
-    startWait();
-    playersFactory.list()
-    .then(function (result) {
-        $scope.players = result.data;
-        endWait();
-    });
+    doRefresh();
 }]);

@@ -45,14 +45,12 @@ namespace PingPong.Controllers
         {
             oDA.Save(player);
             return Ok();
-
         }
 
         [HttpGet]
         [Route("api/players/Remove")]
         public IHttpActionResult Remove(int PlayerID)
         {
-
             oDA.Remove(PlayerID);
             return Ok();
         }

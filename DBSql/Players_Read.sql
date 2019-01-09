@@ -10,7 +10,7 @@ CREATE PROCEDURE [dbo].[Players_Read] (
 
 	SELECT * 
 	FROM Players
-	WHERE	( Players.PlayerID = @PlayerID )
+	WHERE	( PlayerID = @PlayerID )
 
 	RETURN 0;
 END;

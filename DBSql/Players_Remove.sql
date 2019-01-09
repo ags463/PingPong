@@ -9,7 +9,7 @@ CREATE PROCEDURE [dbo].[Players_Remove] (
 	SET NOCOUNT ON;
 
 	DELETE Players
-	WHERE	( Players.PlayerID = @PlayerID )
+	WHERE	( PlayerID = @PlayerID )
 
 	RETURN 0;
 END;

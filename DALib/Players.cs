@@ -23,6 +23,7 @@ namespace PingPong.DALib
 
             oCmd = Utility.CreateSPCommand(Globals.ConnectionName, "Players_List");
             oList = Utility.ReadList<Player>(ref oCmd, ref oConstructor);
+
             return oList;
         }
 
@@ -34,6 +35,7 @@ namespace PingPong.DALib
             oCmd = Utility.CreateSPCommand(Globals.ConnectionName, "Players_Read");
             Utility.AddParameter(ref oCmd, "@PlayerID", DbType.Int32, PlayerID);
             oItem = (Player)Utility.ReadSingle(ref oCmd, ref oConstructor);
+
             return oItem;
         }
 
@@ -42,7 +44,6 @@ namespace PingPong.DALib
             DbCommand oCmd = null;
 
             oCmd = Utility.CreateSPCommand(Globals.ConnectionName, "Players_Save");
-
             Utility.AddParameter(ref oCmd, "@PlayerID", DbType.Int32, player.PlayerID);
             Utility.AddParameter(ref oCmd, "@FirstName", DbType.String, player.FirstName, 50);
             Utility.AddParameter(ref oCmd, "@LastName", DbType.String, player.LastName, 50);

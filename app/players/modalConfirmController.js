@@ -1,4 +1,7 @@
-﻿// NOTE: This controller gets "modals" injected; but, it is in no way
+﻿//
+// CREDITS:  I got this a few years ago, but don't remember from who. Ooops. (Alan G. Stewart)
+//
+// NOTE: This controller gets "modals" injected; but, it is in no way
 // different than any other Controller in your entire AngularJS application.
 // It takes services, manages the view-model, and knows NOTHING about the DOM.
 angular.module('app')

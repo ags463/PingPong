@@ -89,7 +89,6 @@
     <Content Include="app\players\playersList.html" />
     <Content Include="app\players\playersEditController.js" />
     <Content Include="app\players\playersListController.js" />
-    <Content Include="app\services\sharedData.service.js" />
     <Content Include="app\services\loading.service.js" />
     <Content Include="app\services\modals.service.js" />
     <Content Include="DBSql\Players.sql" />
@@ -97,6 +96,7 @@
     <Content Include="DBSql\Players_Read.sql" />
     <Content Include="DBSql\Players_Remove.sql" />
     <Content Include="DBSql\Players_Save.sql" />
+    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="images\delete.gif" />
     <Content Include="images\edit.gif" />
@@ -132,7 +132,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\PayersController.cs" />
+    <Compile Include="Controllers\PlayersController.cs" />
     <Compile Include="DALib\Globals.cs" />
     <Compile Include="DALib\Players.cs" />
     <Compile Include="DBLib\Player.cs" />

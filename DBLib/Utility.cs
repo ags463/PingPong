@@ -3,7 +3,7 @@
 // All shared functions are thread safe.
 //---------------------------------------------------------------------------------------------------
 // Created: 07 Mar 2018, Alan G. Stewart
-// Changed: o8 Jan 2019, Alan G. Stewart
+// Changed: 08 Jan 2019, Alan G. Stewart
 //---------------------------------------------------------------------------------------------------
 using System;
 using System.Collections.Generic;
