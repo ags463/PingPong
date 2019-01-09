@@ -1,0 +1,78 @@
+﻿<style type="text/css">
+    .header {
+        color: black;
+        font-size: 18px;
+        font-weight: bold;
+        width: 800px;
+    }
+    .first-name { width: 125px; }
+    .last-name { width: 125px; }
+    .age { width: 35px; text-align: right; }
+    .skill-level { width: 80px; }
+    .email { width: 200px }
+    .spacer { width: 5px; }
+</style>
+<div ng-class="bodyCursor">
+    <div class="page-head">
+        <a href="index.html"><div class="page-logo"><img src="images/logo.png"></div></a>
+        <div class="page-title">Ping Pong</div>
+        <div class="page-date box">
+            <div>{{currentDate | date:'EEE, dd MMM yyyy'}}</div>
+            <div>{{currentDate | date:'hh:mm:ss'}}</div>
+        </div>
+    </div>
+    <div class="splitter"></div>
+</div>
+<div>
+    <div class="header">
+        <div class="small-icon"></div>
+        <div class="small-icon"></div>
+        <div class="first-name">First Name</div>
+        <div class="last-name">Last Name</div>
+        <div class="age">Age</div>
+        <div class="spacer"></div>
+        <div class="skill-level">Skill</div>
+        <div class="email">Email</div>
+    </div>
+    <span class="center loading" data-ng-show="loading">Loading</span>
+    <div ng-repeat="p in players" class="details">
+        <div class="small-icon">
+            <img ng-click="delete(p)"
+                 class="hvr-click"
+                 alt="delete" title="Delete this player ..." border="0"
+                 src="images/delete.gif">
+        </div>
+        <div class="small-icon">
+            <img ng-click="edit(p)"
+                 class="hvr-click"
+                 alt="edit" title="Edit this player ..." border="0"
+                 src="images/edit.gif">
+        </div>
+        <div class="first-name">{{ p.FirstName }}</div>
+        <div class="last-name">{{ p.LastName }}</div>
+        <div class="age integer2" >
+            <span ng-hide="p.Age < 1">{{ p.Age }}</span>
+        </div>
+        <div class="spacer"></div>
+        <div class="skill-level">{{ p.SkillLevel }}</div>
+        <div class="email">{{ p.Email }}</div>
+    </div>
+    <ul class="klmActions">
+        <li><a class="klmPrimaryAction" ng-click="add()">Add Player</a></li>
+    </ul>
+</div>
+
+<div bn-modals ng-show="subview" class="m-modals" ng-switch="subview">
+    <!-- BEGIN: confirm modal -->
+    <div ng-switch-when="confirm"
+            ng-controller="ConfirmModalController"
+            class="modal">
+        <p>{{ message }}</p>
+        <ul class="klmActions">
+            <li><a class="klmPrimaryAction" ng-click="confirm()">{{confirmButton}}</a></li>
+            <li><a class="klmPrimaryAction" ng-click="deny()">{{denyButton}}</a></li>
+        </ul>
+    </div>
+    <!-- END: confirm modal -->
+</div>
+

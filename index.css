@@ -1,0 +1,286 @@
+﻿
+span.center { margin: auto; position: fixed; top: 100%; left: 0; bottom: 0; right: 0; width: 100%; height: 100%; text-align: center; font-size: 26px; z-index: 1000; padding: 50% 0; background-color: rgba(255,255,255,.5); }
+span.center:empty { display: none; }
+span.loading { font-size: 26px; }
+span.loading.solid { background: #fff; padding: 30px 0 30px 0; }
+span.loading:before {
+    content: " ";
+    height:18px;
+    width:18px;
+    margin:-8px 10px;
+    position:relative;    
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+    border-left:6px solid rgba(9,118,188,.15);
+    border-right:6px solid rgba(9,118,188,.15);
+    border-bottom:6px solid rgba(9,118,188,.15);
+    border-top:6px solid rgba(9,118,188,.8);
+    border-radius:100%;
+    display: inline-block;
+}
+span.loading:after { content: " ..."; }
+span.nodata { display: block; text-align: center; padding: 30% 0; }
+
+/* Global modals */
+div.m-modals > a[ ng-click ] {
+	color: red ;
+	cursor: pointer ;
+	text-decoration: underline ;
+}
+
+div.m-modals {
+	background-color: rgba( 0, 0, 0, 0.8 ) ;
+	bottom: 0px ;
+	left: 0px ;
+	position: fixed ;
+	right: 0px ;
+	top: 0px ;
+    z-index: 1010;
+}
+
+div.m-modals.ng-hide {
+	background-color: rgba( 0, 0, 0, 0 );
+}
+
+div.m-modals.ng-hide-add.ng-hide-add-active,
+div.m-modals.ng-hide-remove.ng-hide-remove-active {
+	transition: 250ms ease all ;
+}
+
+div.m-modals > .modal {
+    color: black;
+	background-color: whitesmoke ;
+	border-radius: 5px 5px 5px 5px ;
+	box-sizing: border-box ;
+		-moz-box-sizing: border-box ;
+	padding: 20px 20px 20px 20px ;
+	position: fixed ;
+	left: 50% ;
+	margin-left: -200px ;
+	top: 200px ;
+	width: 500px ;
+}
+
+div.m-modals.ng-hide > .modal.ng-enter {
+	top: -200px ;
+	transition: 250ms ease top ;
+}
+
+div.m-modals.ng-hide > .modal.ng-enter.ng-enter-active {
+	top: 200px ;
+}
+
+.modal-header {
+    font-size: 30px;
+    background-color: gainsboro;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding: 5px;
+}
+
+
+
+
+
+a.jump {
+	color: #999999 ;
+}
+
+a.jump:hover {
+	background-color: gold ;
+	color: #000000 ;
+}
+
+/* KLM form styling (developed by Alan G. Stewart)*/
+.klmForm {
+    width: 600px;
+    text-align: center;
+}
+    
+ul.klmActions,
+ul.klmActions li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.klmForm ul.klmActions,
+ul.klmActions {
+    margin: 1em 0;
+    padding: 1em 0 0 0;
+}
+ul.klmActions li {
+    overflow: hidden;
+    display: inline-block;
+}
+ul.klmActions li a {
+    display: block;
+    float: left;
+    margin-right: 10px;
+}
+ul.klmActions li a,
+a.klmPrimaryAction,
+a.klmPrimaryAction:link,
+a.klmPrimaryAction:visited,
+a.klmSecondaryAction,
+a.klmSecondaryAction:link,
+a.klmSecondaryAction:visited {
+    padding: 0 1.2em;
+    line-height: 2.5;
+}
+ul.klmActions input { display: none }
+a.klmPrimaryAction,
+a.klmPrimaryAction:link,
+a.klmPrimaryAction:visited,
+a.klmSecondaryAction,
+a.klmSecondaryAction:link,
+a.klmSecondaryAction:visited { display: inline-block }
+a.klmPrimaryAction,
+a.klmPrimaryAction:link,
+a.klmPrimaryAction:visited,
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only {
+    background: #818181;
+    background: -moz-linear-gradient(top, #818181 0%, #656565 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#818181), color-stop(100%,#656565));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#818181', endColorstr='#656565',GradientType=0 );
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    text-shadow: 0px 1px 1px #000;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-color: #fff;
+}
+a[disabled].klmPrimaryAction,
+a[disabled].klmPrimaryAction:link,
+a[disabled].klmPrimaryAction:visited,
+a[disabled].klmPrimaryAction:hover,
+a[disabled].klmPrimaryAction:visited:hover,
+klmForm.ui-widget-content a[disabled].klmPrimaryAction {
+    text-decoration: none;
+    color: #bbb;
+    background: #818181;
+    background: -moz-linear-gradient(top, #818181 0%, #656565 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#818181), color-stop(100%,#656565));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#818181', endColorstr='#656565',GradientType=0 );
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient( startColorstr='#818181', endColorstr='#656565',GradientType=0 )";
+    cursor: default;
+}
+ul.klmActions a.klmPrimaryAction:hover,
+ul.klmActions a.klmPrimaryAction:visited:hover,
+a.klmPrimaryAction:hover,
+.ui-button.ui-widget.ui-state-default.ui-corner-all.ui-button-text-only:hover {
+    background: #4E4E4E;
+    background: -moz-linear-gradient(top, #4E4E4E 0%, #282828 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#4E4E4E), color-stop(100%,#282828));
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4E4E4E', endColorstr='#282828',GradientType=0 );
+    color: #fff;
+}
+ul.klmActions a.klmSecondaryAction,
+ul.klmActions a.klmSecondaryAction:link {
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 1em;
+}
+ul.klmActions a.klmSecondaryAction:hover,
+ul.klmActions a.klmSecondaryAction:visited:hover {
+    text-decoration: underline;
+    background: none;
+    color: inherit;
+}
+a[disabled].klmSecondaryAction,
+a[disabled].klmSecondaryAction:link,
+a[disabled].klmSecondaryAction:visited,
+a[disabled].klmSecondaryAction:hover,
+a[disabled].klmSecondaryAction:visited:hover {
+    text-decoration: none;
+    color: #999;
+    cursor: default;
+}
+
+.klmForm.ui-widget-content a.klmPrimaryAction { color: #fff }
+
+.form-title {
+    font-size: 30px;
+    font-weight: bold;
+    width: 150px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.field-label {
+    font-weight: bold;
+    text-align: right;
+    width: 150px;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 5px;
+    margin-top: 5px;
+}
+
+.klmForm input.ng-invalid {
+    background-color: white;
+}
+.klmform input.ng-invalid.ng-touched {
+    background-color: #FA787E;
+}
+.klmForm input.ng-valid.ng-touched {
+    background-color: white;
+}
+.klmForm select.ng-invalid {
+    background-color: white;
+}
+.klmForm select.ng-invalid.ng-touched {
+    background-color: #FA787E;
+}
+.klmForm select.ng-valid.ng-touched {
+    background-color: white;
+}
+
+/* Misc stylings */
+
+.center-pane {
+    position: absolute;
+    margin: 0px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.wait-cursor { cursor: wait !important; }
+
+.page-head { margin-top: 20px; padding: 3px 0px 3px 10px; width: 800px;}
+.page-head div { display: inline-block; vertical-align: middle; }
+.page-head .box { background-color: #005696; color: white; border: 2px solid white; }
+.page-logo { }
+.page-title { font-size: 50px; margin-left: 50px; }
+.page-date {
+    float: right;
+}
+
+.hvr-click { box-shadow: 2px 2px 2px rgba(0,0,0,0.3); cursor: pointer; }
+.hvr-click:hover { box-shadow: 4px 4px 4px rgba(0,0,0,0.3); }
+.hvr-click:active { box-shadow: 1px 1px 1px rgba(0,0,0,0.3); }
+
+.integer2 { text-align: right; width: 40px; }
+
+.splitter { height: 5px; float: unset; }
+
+.hidden { display: none; !important; }
+
+.small-icon { width: 21px; padding: 0px 3px 0px 5px; }
+
+.header { padding: 3px 0px 3px 10px;
+          background-color: whitesmoke; border: 2px solid white; border-radius: 10px;
+}
+.header div { display: inline-block; vertical-align: middle; }
+
+.details {
+    padding: 3px 0px 3px 10px;
+}
+.details div { display: inline-block; vertical-align: middle; }

@@ -1,0 +1,45 @@
+﻿<div class="page-head">
+    <a href="index.html"><div class="page-logo"><img src="images/logo.png"></div></a>
+    <div class="page-title">Ping Pong</div>
+    <div class="page-date">
+        <div>{{currentDate | date:'EEE, dd MMM yyyy'}}</div>
+        <div>{{currentDate | date:'hh:mm:ss'}}</div>
+    </div>
+</div>
+<div class="splitter"></div>
+<div class="header"></div>
+<div class="splitter"></div>
+<form name="formPlayer" class="klmForm" novalidate>
+    <div class="form-title">{{formTitle}}</div>
+    <div>
+        <div class="field-label">First Name:</div>
+        <input name="FirstName" type="text" ng-model="player.FirstName" placeholder="( Required )" required />
+    </div>
+    <div>
+        <div class="field-label">Last Name:</div>
+        <input name="LastName" type="text" ng-model="player.LastName" placeholder="( Required )" required />
+    </div>
+    <div>
+        <div class="field-label">Age:</div>
+        <input type="number" ng-model="player.Age" min="1" />
+    </div>
+    <div>
+        <div class="field-label">Skill Level:</div>
+        <select name="SkillLevel" ng-model="player.SkillLevel" placeholder="( Required )" required
+                title="Select a skill level ..." style="width: 173px;">
+            <option value="" disabled selected hidden>( Required )</option>
+            <option value="beginner">beginner</option>
+            <option value="intermediate">intermediate</option>
+            <option value="advanced">advanced</option>
+            <option value="expert">expert</option>
+        </select>
+    </div>
+    <div>
+        <div class="field-label">Email:</div>
+        <input name="email" type="email" ng-model="player.Email" placeholder="(Required )" required />
+    </div>
+    <ul class="klmActions">
+        <li><a class="klmPrimaryAction" ng-click="save()" ng-disabled="formPlayer.$invalid">Save</a></li>
+        <li><a class="klmSecondaryAction" ng-click="cancel()">Cancel</a></li>
+    </ul>
+</form>
